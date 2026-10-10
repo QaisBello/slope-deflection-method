@@ -1,0 +1,22 @@
+[
+  {"id":"office-floor","name":"Three-span floor beam with overhang","note":"A typical office floor beam: three spans, a balcony overhang on the right, mixed loads.",
+   "E":200,"left":"pinned","right":"pinned",
+   "spans":[{"length":6,"I":300,"loads":[{"kind":"udl","w":18}]},
+            {"length":7.5,"I":300,"loads":[{"kind":"udl","w":18},{"kind":"point","w":60,"a":3.75}]},
+            {"length":5,"I":300,"loads":[{"kind":"udl","w":18}]}],
+   "overhangRight":{"length":1.8,"I":300,"loads":[{"kind":"udl","w":12},{"kind":"point","w":15,"a":1.8}]},
+   "settlements":[0,0,0,0]},
+  {"id":"two-span","name":"Textbook: two equal spans, UDL","note":"Check case: support moment should be wL²/8 = 45 kN·m and the middle reaction 10wL/8 = 75 kN.",
+   "E":200,"left":"pinned","right":"pinned",
+   "spans":[{"length":6,"I":100,"loads":[{"kind":"udl","w":10}]},{"length":6,"I":100,"loads":[{"kind":"udl","w":10}]}],"settlements":[0,0,0]},
+  {"id":"propped","name":"Propped cantilever, triangular load","note":"Fixed at the left, propped at the right, with a load rising to the right.",
+   "E":200,"left":"fixed","right":"pinned",
+   "spans":[{"length":8,"I":200,"loads":[{"kind":"linear","w":0,"a":0,"b":8,"w2":30}]}],"settlements":[0,0]},
+  {"id":"settlement","name":"Continuous beam with a settling support","note":"The middle support settles 15 mm. Watch the moments redistribute.",
+   "E":30,"left":"fixed","right":"fixed",
+   "spans":[{"length":5,"I":2000,"loads":[{"kind":"udl","w":20}]},{"length":5,"I":2000,"loads":[{"kind":"udl","w":20}]}],"settlements":[0,15,0]},
+  {"id":"v1-readme","name":"The original README example (corrected)","note":"Same spans and loads as my first version's README example. The first version ignored the point-load position and mis-signed its FEM; this solver gets it right.",
+   "E":200,"left":"pinned","right":"pinned",
+   "spans":[{"length":5,"I":100,"loads":[{"kind":"udl","w":10}]},{"length":6,"I":100,"loads":[{"kind":"point","w":15,"a":3}]},
+            {"length":4,"I":100,"loads":[{"kind":"point","w":12,"a":2}]},{"length":7,"I":100,"loads":[{"kind":"udl","w":8,"a":3.5,"b":7}]}],"settlements":[0,0,0,0,0]}
+]
